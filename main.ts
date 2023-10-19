@@ -15,6 +15,7 @@ if (import.meta.main) {
     const userList = await getUserList(token, dept)
     return userList
   }))
-  console.log(users.flat().map(u => { return { id: u.userid, name: u.name, phone: u.mobile } }))
+  // console.log(users.flat().map(u => { return { id: u.userid, name: u.name, phone: u.mobile } }))
+  users.flat().map(u => { return `insert into dinguser (id, name, phone) values ('${u.userid}','${u.name}','${u.mobile}');` }).forEach(l=>console.log(l));
   
 }
